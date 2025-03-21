@@ -37,7 +37,7 @@ export default function DuckHuntChat() {
 
   useEffect(() => {
     if (username) {
-      const ws = new WebSocket("wss://duckhunt-server.onrender.com");
+      const ws = new WebSocket("wss://duckhunt-webserver.onrender.com");
       ws.onmessage = (event) => {
         const { from, message } = JSON.parse(event.data);
         addChat(`${from}: ${message}`);
